@@ -35,6 +35,10 @@ def setup_repo(url):
 
 def fixup_user(user,authors):
   user=user.strip("\"")
+
+  if "<<>>" in user:
+    user = user.replace("<<>>", "")
+
   if authors!=None:
     # if we have an authors table, try to get mapping
     # by defaulting to the current value of 'user'
