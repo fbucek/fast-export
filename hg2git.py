@@ -39,6 +39,9 @@ def fixup_user(user,authors):
 
   if "<<>>" in user:
     user = user.replace("<<>>", "")
+  
+  if "<<" in user:
+    user = user.replace("<<", "<")
 
   if authors!=None:
     # if we have an authors table, try to get mapping
