@@ -68,6 +68,21 @@ This will remove merged branches
 ```
 git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d
 ```
+Rest of branches can be save to file which can be then modified to add command to delete branch
+```
+git branch > clean.sh
+chmod 770 clean.sh
+```
+Add: git branch -D 'branch' to removed unmerged branch ( -d will not work, because it was already done using previous command )
+So the file should look like:
+git branch -D branchA
+git branch -D branchB
+...
+
+After modification simply run clean.sh -> it will remove listed branches
+``` 
+clean.sh 
+```
 
 Tag and Branch Naming
 ---------------------
