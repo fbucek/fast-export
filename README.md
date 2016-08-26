@@ -62,6 +62,18 @@ User <garbage<user@example.com>=User <user@example.com>
 -- End of authors.map --
 ```
 
+Cleaning branches
+-------------------
+This will remove merged branches
+```
+git branch --merged | grep -v "\*" | grep -v master | grep -v dev | xargs -n 1 git branch -d
+```
+
+
+
+
+
+
 Tag and Branch Naming
 ---------------------
 
